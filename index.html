@@ -47,21 +47,21 @@
             <form action="">
                 <h2>Register</h2>
                 <div class="input-group">
-                    <input type="text">
+                    <input type="text" id="newUsername">
                     <label for="">Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="email">
+                    <input type="email" id="email">
                     <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password">
+                    <input type="password" id="newPassword">
                     <label for="">Password</label>
                 </div>
                 <div class="remember">
                     <label><input type="checkbox"> I agree to the terms and conditions</label>
                 </div>
-                <button type="submit">Register</button>
+                <button type="submit" onclick="registerUsers()">Register</button>
                 <div class="signUp-link">
                     <p>Already have an account?<a href="#" class="signInBtn-link"> Login</a></p>
                 </div>

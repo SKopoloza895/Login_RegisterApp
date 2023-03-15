@@ -3,19 +3,49 @@ let users = [
 	{username: "thabz", password:"password123"}
 ]
 
+// function login
 function login() {
-	let username = document.getElementById('username').value
-	let password = document.getElementById('password').value
+	// data input from the form 
+	let username = document.getElementById("username").value
+	let password = document.getElementById("password").value
 
-	for (i = 0; i < users.length; i++) {
+	// for loop users objects then confirm if username and password 
+	for ( let i = 0; i < users.length; i++) {
 		if (username == users[i].username && password == users[i].password) {
-			console.log(username + "login successfull!!")
+			console.log(username + " login successfull!! ")
+			return
+		}
+		
+	}
+// error if username and password dont match
+	console.log("incorrect username or password")
+}
+
+function registerUsers() {
+	let registerUsername = document.getElementById("newUsername").value
+	let registerEmail = document.getElementById("email").value
+	let registerPassword = document.getElementById("newPassword").value
+	let newUsername = {
+		username: registerUsername,
+		email: registerEmail,
+		password: registerPassword
+
+	}
+
+	for (let i = 0; i < users.length; i++) {
+		if (registerUsername == users[i].username) {
+			alert("username is already taken")
+			return
+		}
+		else if(registerPassword.length < 8){
+			alert("password is too short plus 8 or more chars")
 			return
 		}
 		
 	}
 
-	console.log("incorrect username or password")
+	users.push(newUsername)
+	console.log(users)
 }
 
 
