@@ -57,7 +57,10 @@ function registerUsers() {
 		}
 		
 	}
+
+	// add new user to users array and store in local storage
 	users.push(newUsername)
+	localStorage.setItem("users", JSON.stringify(users));
 	console.log(users)
 }
 
