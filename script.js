@@ -1,5 +1,11 @@
+let users = [
+	{username: "siya", password:"password12"},
+	{username: "thabz", password:"password123"}
+]
 
-let users = JSON.parse(localStorage.setItem("users")) || [];
+// localStorage.setItem("users", JSON.stringify([]));
+
+// let users = JSON.parse(localStorage.setItem("users")) || [];
 
 
 
