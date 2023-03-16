@@ -3,13 +3,6 @@ let users = [
 	{username: "thabz", password:"password123"}
 ]
 
-// localStorage.setItem("users", JSON.stringify([]));
-
-// let users = JSON.parse(localStorage.setItem("users")) || [];
-
-
-
-
 // function login
 function login() {
 	// data input from the form 
@@ -22,12 +15,12 @@ function login() {
 	// for loop users objects then confirm if username and password 
 	for ( let i = 0; i < users.length; i++) {
 		if (username == users[i].username && password == users[i].password) {
-			alert(username + " login successfull!! ")
+			alert(username + " login successfull! ")
 			return
 		}
 		
 	}
-// error if username and password dont match
+	// error if username and password dont match
 	alert("incorrect username or password")
 }
 
@@ -64,7 +57,6 @@ function registerUsers() {
 	console.log(users)
 }
 
-
 // for active then change the click login and register 
 const signUpBtnLink = document.querySelector('.signUpBtn-link');
 const signInBtnLink = document.querySelector('.signInBtn-link');
@@ -76,5 +68,3 @@ signUpBtnLink.addEventListener('click',() =>{
 signInBtnLink.addEventListener('click',() =>{
 	wrapper.classList.toggle('active');
 });
-
-
