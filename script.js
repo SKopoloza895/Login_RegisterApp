@@ -42,6 +42,9 @@ function registerUsers() {
 
 	}
 
+	// retrieve users array from local storage
+	let users = JSON.parse(localStorage.getItem("users")) || [];
+
 	// check for existing username or short password
 	for (let i = 0; i < users.length; i++) {
 		if (registerUsername == users[i].username) {
