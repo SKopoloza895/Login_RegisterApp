@@ -1,7 +1,8 @@
-let users = [
-	{username: "siya", password:"password12"},
-	{username: "thabz", password:"password123"}
-]
+
+let users = JSON.parse(localStorage.setItem("users")) || [];
+
+
+
 
 // function login
 function login() {
@@ -9,16 +10,19 @@ function login() {
 	let username = document.getElementById("username").value
 	let password = document.getElementById("password").value
 
+	// retrieve users array from local storage
+	let users = JSON.parse(localStorage.getItem("users")) || [];
+
 	// for loop users objects then confirm if username and password 
 	for ( let i = 0; i < users.length; i++) {
 		if (username == users[i].username && password == users[i].password) {
-			console.log(username + " login successfull!! ")
+			alert(username + " login successfull!! ")
 			return
 		}
 		
 	}
 // error if username and password dont match
-	console.log("incorrect username or password")
+	alert("incorrect username or password")
 }
 
 function registerUsers() {
@@ -32,6 +36,7 @@ function registerUsers() {
 
 	}
 
+	// check for existing username or short password
 	for (let i = 0; i < users.length; i++) {
 		if (registerUsername == users[i].username) {
 			alert("username is already taken")
@@ -43,13 +48,9 @@ function registerUsers() {
 		}
 		
 	}
-
 	users.push(newUsername)
 	console.log(users)
 }
-
-
-
 
 
 // for active then change the click login and register 
@@ -65,14 +66,3 @@ signInBtnLink.addEventListener('click',() =>{
 });
 
 
-function show_hide_password(target){
-	var input = document.getElementById('password-input');
-	if (input.getAttribute('type') == 'password') {
-		target.classList.add('view');
-		input.setAttribute('type', 'text');
-	} else {
-		target.classList.remove('view');
-		input.setAttribute('type', 'password');
-	}
-	return false;
-}
