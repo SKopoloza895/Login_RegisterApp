@@ -34,7 +34,10 @@
                 <div class="social-platform">
                     <p>Or login with</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <a href="#" id="facebook-login-button"><i class="fa-brands fa-facebook"></i></a>
+
+                        <!-- <a href="#"><i class="fa-brands fa-facebook"></i></a> -->
                         <a href=""><i class="fa-brands fa-google"></i></a>
                         <a href=""><i class="fa-brands fa-twitter"></i></a>
                     </div>
@@ -69,5 +72,16 @@
         </div>
     </div>
       <script src="script.js"></script>
+
+    <!-- APIs Section -->
+    <!-- google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- facebook -->
+    <!-- Load the Facebook SDK asynchronously -->
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <!-- twitter -->
+    <script async defer src="https://platform.twitter.com/widgets.js"></script>
+
 </body>
 </html>

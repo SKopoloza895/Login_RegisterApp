@@ -68,3 +68,41 @@ signUpBtnLink.addEventListener('click',() =>{
 signInBtnLink.addEventListener('click',() =>{
 	wrapper.classList.toggle('active');
 });
+
+// =========================================== social platforms ========================= //
+
+function onSignIn(googleUser) {
+	// Get the user's ID token and other data needed for authentication
+	var id_token = googleUser.getAuthResponse().id_token;
+	// ...
+	// Send the token to your server for validation and login
+	// ...
+}
+
+
+
+// Initialize the Facebook SDK
+window.fbAsyncInit = function () {
+	FB.init({
+		appId: 'your-app-id',
+		cookie: true,
+		xfbml: true,
+		version: 'v13.0'
+	});
+
+	// Add a click event listener to your Facebook login button
+	document.getElementById('facebook-login-button').addEventListener('click', function () {
+		// Authenticate the user with Facebook
+		FB.login(function (response) {
+			if (response.authResponse) {
+				var access_token = response.authResponse.accessToken;
+				// Send the access token to your server for validation and login
+				// ...
+			} else {
+				console.log('User cancelled login or did not fully authorize.');
+			}
+		});
+	});
+};
+
+  
